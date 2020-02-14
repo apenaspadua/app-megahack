@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">app-realstate-mobile</string>
+
+    <!-- QR CODE -->
+    <string name="apresentation_home">Mudar faz parte da gente</string>
+    <string name="apresentation_subtitle">Comprar ou mudar de apertamento nunca ficou tão simples com a RealState</string>
+    <string name="read_qrcode">Ler QRCODE</string>
+</resources>
