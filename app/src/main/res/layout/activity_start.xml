@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/darkWhite"
     android:layout_height="match_parent"
-    tools:context=".view.home.HomeActivity">
+    tools:context=".ui.start.StartActivity">
 
     <include
         android:id="@+id/toolbar_layout"
@@ -71,7 +71,7 @@
             android:gravity="center"
             android:text="@string/read_qrcode"
             android:textSize="16sp"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/darkWhite"
             app:fontFamily="@font/roboto_bold" />
 
     </RelativeLayout>
@@ -121,7 +121,7 @@
 
 
     <TextView
-        android:id="@+id/linkOurPromisse"
+        android:id="@+id/linkSign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -131,7 +131,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="@string/our_promiisse"
+        android:text="@string/sign"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

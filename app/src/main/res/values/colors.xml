@@ -2,9 +2,14 @@
 <resources>
     <color name="colorPrimary">#D9562B</color>
     <color name="colorPrimaryDark">#fff</color>
-    <color name="colorAccent">#F3F7FA</color>
+    <color name="colorAccent">#191f23</color>
+    <color name="darkWhite">#F3F7FA</color>
     <color name="colorTransparent">#00FFFFFF</color>
 
     <color name="colorText">#191f23</color>
     <color name="colorLight">#AFAFAF</color>
+    <color name="lineColor">#E8E8E8</color>
+    <color name="greyish">#5D5D5D</color>
+
+
 </resources>
