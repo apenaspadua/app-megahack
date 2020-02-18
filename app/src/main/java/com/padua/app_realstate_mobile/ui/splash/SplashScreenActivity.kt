@@ -7,6 +7,7 @@ import android.os.Handler
 import android.view.Window
 import android.view.WindowManager
 import com.padua.app_realstate_mobile.R
+import com.padua.app_realstate_mobile.ui.searchImmobile.SearchImmobileActivity
 import com.padua.app_realstate_mobile.ui.start.StartActivity
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -24,6 +25,6 @@ class SplashScreenActivity : AppCompatActivity() {
         Handler().postDelayed({
             startActivity(Intent(this, StartActivity::class.java))
             finish()
-        }, 4000)
+        }, 3000)
     }
 }

@@ -3,6 +3,7 @@ package com.padua.app_realstate_mobile.ui.searchImmobile
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ListAdapter
@@ -57,20 +58,41 @@ class SearchImmobileActivity : AppCompatActivity() {
         ).show()
     }
 
+    private fun showMessage(message: String){
+        Snackbar.make(
+            findViewById(android.R.id.content),
+            message,
+            Snackbar.LENGTH_LONG
+        ).show()
+    }
+
     @SuppressLint("SetTextI18n")
     fun openDialog(immobile: ImmobileResponse){
         val dialog = LayoutInflater.from(this).inflate(R.layout.dialog_details_immobile, null)
         val builder = AlertDialog.Builder(this).setView(dialog)
+        val alert = builder.show()
 
         dialog.textDescricao.text = "Casa localizada no bairro " + immobile.bairro + " na cidade de " +
                 immobile.cidade + "/" + immobile.estado
+        dialog.textQuartoDetails.text = immobile.quarto.toString() + " Quartos"
+        dialog.textBanheiroDetails.text = immobile.banheiro.toString() + " Banheiros"
+        dialog.textLavandaDetails.text = "Varanda: " + immobile.varanda
+        dialog.textPisoDetails.text = "Piso: " + immobile.piso
+        dialog.textGaragemDetails.text = immobile.garagem.toString() + " Garagem"
         dialog.textVendaDetalhes.text = "Valor de venda: R$ " + immobile.preco.toString()
 
         dialog.button_marcar_visita.setOnClickListener {
+            dialog.progress_bar_details.visibility = View.VISIBLE
+            dialog.text_details_button.visibility = View.GONE
 
+            Handler().postDelayed(
+                {
+                    alert.dismiss()
+                    showMessage("Sua solicitação de visita foi enviada com sucesso! Aguarde nosso retorno.")
+                },
+                2000 // value in milliseconds
+            )
         }
-
-        builder.show()
     }
 
     override fun onBackPressed() {

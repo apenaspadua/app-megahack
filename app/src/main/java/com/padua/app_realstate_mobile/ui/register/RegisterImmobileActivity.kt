@@ -1,17 +1,22 @@
 package com.padua.app_realstate_mobile.ui.register
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import com.padua.app_realstate_mobile.R
 import com.padua.app_realstate_mobile.model.Immobile
 import com.padua.app_realstate_mobile.utils.Utils
 import kotlinx.android.synthetic.main.activity_register_immobile.*
 import kotlinx.android.synthetic.main.dialog_immobile.view.*
 
+@RequiresApi(Build.VERSION_CODES.M)
 class RegisterImmobileActivity : AppCompatActivity() {
 
     private lateinit var immobile: Immobile
@@ -19,6 +24,7 @@ class RegisterImmobileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_immobile)
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
         immobile = Immobile()
 
@@ -109,10 +115,19 @@ class RegisterImmobileActivity : AppCompatActivity() {
         }
     }
 
+    private fun showMessage(message: String){
+        Snackbar.make(
+            findViewById(android.R.id.content),
+            message,
+            Snackbar.LENGTH_LONG
+        ).show()
+    }
+
     @SuppressLint("SetTextI18n")
     fun openDialog(immobile: Immobile){
         val dialog = LayoutInflater.from(this).inflate(R.layout.dialog_immobile, null)
         val builder = AlertDialog.Builder(this).setView(dialog)
+        val alert = builder.show()
 
         dialog.textTipo.text = "Casa"
         dialog.textQuarto.text = immobile.quarto.toString() + " Quartos"
@@ -130,10 +145,17 @@ class RegisterImmobileActivity : AppCompatActivity() {
         dialog.textVenda.text = "Venda: R$ " + immobile.preco.toString() + ",00"
 
         dialog.button_disponibilizar_imovel.setOnClickListener {
+            dialog.progress_bar_register.visibility = View.VISIBLE
+            dialog.text_register.visibility = View.GONE
 
+            Handler().postDelayed(
+                {
+                    alert.dismiss()
+                    showMessage("Sua solicitação de para venda do imóvel foi enviada com sucesso! Aguarde nosso retorno.")
+                },
+                2000 // value in milliseconds
+            )
         }
-
-        builder.show()
     }
 
     override fun onBackPressed() {

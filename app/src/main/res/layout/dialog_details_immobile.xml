@@ -51,6 +51,64 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
+    <TextView
+        android:id="@+id/textQuartoDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/roboto"
+        android:text="Quarto"
+        android:textColor="@color/greyish"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDescricao" />
+
+    <TextView
+        android:id="@+id/textBanheiroDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto"
+        android:text="Banheiro"
+        android:textColor="@color/greyish"
+        app:layout_constraintStart_toStartOf="@+id/textQuartoDetails"
+        app:layout_constraintTop_toBottomOf="@+id/textQuartoDetails" />
+
+    <TextView
+        android:id="@+id/textLavandaDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto"
+        android:text="Lavanda"
+        android:textColor="@color/greyish"
+        app:layout_constraintStart_toStartOf="@+id/textBanheiroDetails"
+        app:layout_constraintTop_toBottomOf="@+id/textBanheiroDetails" />
+
+    <TextView
+        android:id="@+id/textPisoDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto"
+        android:text="Piso"
+        android:textColor="@color/greyish"
+        app:layout_constraintStart_toStartOf="@+id/textLavandaDetails"
+        app:layout_constraintTop_toBottomOf="@+id/textLavandaDetails" />
+
+    <TextView
+        android:id="@+id/textGaragemDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto"
+        android:text="Garagem"
+        android:textColor="@color/greyish"
+        app:layout_constraintStart_toStartOf="@+id/textPisoDetails"
+        app:layout_constraintTop_toBottomOf="@+id/textPisoDetails" />
+
 
     <TextView
         android:id="@+id/textVendaDetalhes"
@@ -62,20 +120,20 @@
         android:textColor="@color/greyish"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textDescricao"
-        app:layout_constraintTop_toBottomOf="@+id/textDescricao" />
+        app:layout_constraintStart_toStartOf="@+id/textGaragemDetails"
+        app:layout_constraintTop_toBottomOf="@+id/textGaragemDetails" />
 
     <RelativeLayout
         android:id="@+id/button_marcar_visita"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/button_deafult"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/button_not_rounded"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,6 +141,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textVendaDetalhes">
 
         <TextView
+            android:id="@+id/text_details_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -90,6 +149,26 @@
             android:textColor="@color/darkWhite"
             android:textSize="16sp"
             app:fontFamily="@font/roboto_bold" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:foregroundGravity="center_horizontal"
+            android:indeterminateTint="@color/colorPrimaryDark"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>
 
 
