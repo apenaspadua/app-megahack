@@ -8,6 +8,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.padua.app_realstate_mobile.R
 import com.padua.app_realstate_mobile.ui.myImmobile.MyImmobileActivity
+import com.padua.app_realstate_mobile.ui.register.RegisterImmobileActivity
 import com.padua.app_realstate_mobile.ui.searchImmobile.SearchImmobileActivity
 import com.padua.app_realstate_mobile.utils.Utils
 import kotlinx.android.synthetic.main.activity_home.*
@@ -27,7 +28,7 @@ class HomeActivity : AppCompatActivity() {
 
     private val buttonClickTenhoImovel =
         View.OnClickListener {
-            startActivity(Intent(this, MyImmobileActivity::class.java))
+            startActivity(Intent(this, RegisterImmobileActivity::class.java))
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
 

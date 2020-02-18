@@ -100,7 +100,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tilPass">
 
         <TextView
-            android:id="@+id/text_button_login"
+            android:id="@+id/button_login"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"

@@ -1,20 +1,22 @@
 package com.padua.app_realstate_mobile.model
 
 class Immobile(
-    val _id: String?,
-    val preco: Int?,
-    val tamanho: Int?,
-    val quarto: Int?,
-    val suite: String?,
-    val banheiro: Int?,
-    val piso: String?,
-    val varanda: String?,
-    val garagem: Int?,
-    val piscina: String?,
-    val moveisImbutidos: String?,
-    val bairro: String?,
-    val cidade: String?,
-    val estado: String?,
-    val proprietario: String?,
-    val __v: Int?
-)
+    var tamanho: Int?,
+    var quarto: Int?,
+    var banheiro: Int?,
+    var suite: String?,
+    var piso: String?,
+    var varanda: String?,
+    var garagem: String?,
+    var piscina: String?,
+    var moveisImbutidos: String?,
+    var bairro: String?,
+    var cidade: String?,
+    var estado: String?,
+    var preco: Int?,
+    var proprietario: String?
+) {
+    constructor() : this(tamanho = null, quarto = null, banheiro = null, suite = null, piso = null,
+        varanda = null, garagem = null, piscina = null, moveisImbutidos = null, bairro = null,
+        cidade = null, estado = null, preco = null, proprietario = null)
+}

@@ -12,7 +12,7 @@ import com.google.zxing.integration.android.IntentIntegrator
 import com.padua.app_realstate_mobile.R
 import com.padua.app_realstate_mobile.ui.details.DetailsImobileActivity
 import com.padua.app_realstate_mobile.ui.login.LoginActivity
-import com.padua.app_realstate_mobile.ui.register.RegisterActivity
+import com.padua.app_realstate_mobile.ui.register.RegisterImmobileActivity
 import com.padua.app_realstate_mobile.utils.Utils
 import kotlinx.android.synthetic.main.activity_start.*
 
@@ -43,7 +43,7 @@ class StartActivity : AppCompatActivity() {
 
     private val buttonClickRegister =
         View.OnClickListener {
-            startActivity(Intent(this@StartActivity, RegisterActivity::class.java))
+            startActivity(Intent(this@StartActivity, RegisterImmobileActivity::class.java))
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         }
 

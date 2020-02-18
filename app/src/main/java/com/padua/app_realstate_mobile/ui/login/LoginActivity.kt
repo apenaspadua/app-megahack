@@ -1,20 +1,15 @@
 package com.padua.app_realstate_mobile.ui.login
 
-import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.view.MotionEvent
 import android.view.View
-import android.view.inputmethod.InputMethodManager
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.padua.app_realstate_mobile.R
 import com.padua.app_realstate_mobile.network.bean.LoginRequest
 import com.padua.app_realstate_mobile.ui.home.HomeActivity
-import com.padua.app_realstate_mobile.ui.register.RegisterActivity
 import com.padua.app_realstate_mobile.utils.Utils
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -73,12 +68,12 @@ class LoginActivity : AppCompatActivity() {
 
     private fun showLoading(){
         progress_bar.visibility = View.VISIBLE
-        text_button_login.visibility = View.GONE
+        button_login.visibility = View.GONE
     }
 
     private fun hideLoading(){
         progress_bar.visibility = View.GONE
-        text_button_login.visibility = View.VISIBLE
+        button_login.visibility = View.VISIBLE
     }
 
     private fun animateButtons(){

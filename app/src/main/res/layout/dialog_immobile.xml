@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textTipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Casa"
+        android:textColor="@color/greyish"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textQuarto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto"
+        android:text="Quarto"
+        android:textColor="@color/greyish"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTipo" />
+
+    <TextView
+        android:id="@+id/textBanheiro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto"
+        android:text="Banheiro"
+        android:textColor="@color/greyish"
+        app:layout_constraintStart_toStartOf="@+id/textQuarto"
+        app:layout_constraintTop_toBottomOf="@+id/textQuarto" />
+
+    <TextView
+        android:id="@+id/textLavanda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto"
+        android:text="Lavanda"
+        android:textColor="@color/greyish"
+        app:layout_constraintStart_toStartOf="@+id/textBanheiro"
+        app:layout_constraintTop_toBottomOf="@+id/textBanheiro" />
+
+    <TextView
+        android:id="@+id/textPiso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto"
+        android:text="Piso"
+        android:textColor="@color/greyish"
+        app:layout_constraintStart_toStartOf="@+id/textLavanda"
+        app:layout_constraintTop_toBottomOf="@+id/textLavanda" />
+
+    <TextView
+        android:id="@+id/textGaragem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto"
+        android:text="Garagem"
+        android:textColor="@color/greyish"
+        app:layout_constraintStart_toStartOf="@+id/textPiso"
+        app:layout_constraintTop_toBottomOf="@+id/textPiso" />
+
+    <TextView
+        android:id="@+id/textAluguel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Aluguel"
+        android:textColor="@color/greyish"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textGaragem" />
+
+    <TextView
+        android:id="@+id/textVenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Venda"
+        android:textColor="@color/greyish"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textAluguel" />
+
+    <RelativeLayout
+        android:id="@+id/button_disponibilizar_imovel"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_not_rounded"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVenda">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="DISPONIBILIZAR MEU IMÓVEL"
+            android:textColor="@color/darkWhite"
+            android:textSize="16sp"
+            app:fontFamily="@font/roboto_bold" />
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
