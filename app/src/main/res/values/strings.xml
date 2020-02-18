@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">RealState</string>
+    <string name="app_name">Real Estate</string>
 
     <!-- QR CODE -->
     <string name="apresentation_home">Mudar faz parte da gente</string>
-    <string name="apresentation_subtitle">Comprar ou mudar de apertamento nunca ficou tão simples com a RealState</string>
+    <string name="apresentation_subtitle">Comprar ou mudar de apertamento nunca ficou tão simples com a Real Estate Solution</string>
     <string name="our_promiisse">NOSSA PROPOSTA</string>
     <string name="sign">JÁ TENHO UMA CONTA</string>
     <string name="create_accont">NÃO TEM CADASTRO? CRIE UMA CONTA!</string>
