@@ -3,17 +3,21 @@ package com.padua.app_realstate_mobile.ui.searchImmobile
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.ListAdapter
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.padua.app_realstate_mobile.R
 import com.padua.app_realstate_mobile.network.bean.ImmobileResponse
+import com.padua.app_realstate_mobile.ui.searchImmobile.adapter.SearchAdapter
+import kotlinx.android.synthetic.main.activity_search_immobile.*
 
 @RequiresApi(Build.VERSION_CODES.M)
 class SearchImmobileActivity : AppCompatActivity() {
 
     private lateinit var interactor: SeachImmobileContract.Interactor
+    private lateinit var adapter: SearchAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,20 +29,17 @@ class SearchImmobileActivity : AppCompatActivity() {
     }
 
     private fun getListimmobile() {
+        progressBarList.visibility = View.VISIBLE
         interactor.getListImmobile()
     }
 
     fun createList(list: List<ImmobileResponse>){
-        list
-//        list = onCreateListFamilyGroup(dependentsResponse)
-//        activity.recyclerViewFamilyGroup.layoutManager = LinearLayoutManager(activity.applicationContext)
-//        val familyGroupListAdapter = FamilyGroupAdapter(activity, list, view)
-//        activity.recyclerViewFamilyGroup.adapter = familyGroupListAdapter
-//        view?.hideLoading()
-//
-//        if(list.isEmpty()){
-//            activity.constraintEmptyDependents.visibility = View.VISIBLE
-//        }
+        progressBarList.visibility = View.GONE
+        val recyclerView = recycler
+        recyclerView.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        adapter = SearchAdapter(list, this)
+        recyclerView.adapter = adapter
     }
 
     fun onError(message: String){
@@ -47,5 +48,11 @@ class SearchImmobileActivity : AppCompatActivity() {
             message,
             Snackbar.LENGTH_LONG
         ).show()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        finish()
     }
 }
