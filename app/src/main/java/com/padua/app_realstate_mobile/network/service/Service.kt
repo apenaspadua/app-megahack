@@ -1,4 +1,4 @@
-package com.padua.app_realstate_mobile.network
+package com.padua.app_realstate_mobile.network.service
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -6,9 +6,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 object Service {
     private const val baseUrl = "https://realstatesolution.herokuapp.com"
 
-       fun getRetrofitInstance(path : String) : Retrofit {
+       fun getRetrofitInstance() : Retrofit {
             return Retrofit.Builder()
-                .baseUrl(path)
+                .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }

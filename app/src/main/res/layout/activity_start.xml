@@ -96,7 +96,7 @@
 
 
     <RelativeLayout
-        android:id="@+id/buttonRegister"
+        android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
@@ -113,7 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_bold"
-            android:text="@string/create_accont"
+            android:text="@string/login_accont"
             android:textColor="@color/colorText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -121,7 +121,7 @@
 
 
     <TextView
-        android:id="@+id/linkSign"
+        android:id="@+id/linkAboutUs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -131,12 +131,12 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="@string/sign"
+        android:text="@string/our_promiisse"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.integration.android.IntentIntegrator
 import com.padua.app_realstate_mobile.R
+import com.padua.app_realstate_mobile.ui.details.DetailsImobileActivity
 import com.padua.app_realstate_mobile.ui.login.LoginActivity
 import com.padua.app_realstate_mobile.ui.register.RegisterActivity
 import com.padua.app_realstate_mobile.utils.Utils
@@ -18,6 +19,10 @@ import kotlinx.android.synthetic.main.activity_start.*
 @RequiresApi(Build.VERSION_CODES.M)
 class StartActivity : AppCompatActivity() {
 
+    companion object {
+        var url = ""
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
@@ -25,8 +30,8 @@ class StartActivity : AppCompatActivity() {
 
         animateButtons()
 
-        linkSign.setOnClickListener(buttonClickLogin)
-        buttonRegister.setOnClickListener(buttonClickRegister)
+       // linkAboutUs.setOnClickListener(buttonClickLogin)
+        buttonLogin.setOnClickListener(buttonClickLogin)
         buttonReadCode.setOnClickListener(openSacan)
     }
 
@@ -57,7 +62,8 @@ class StartActivity : AppCompatActivity() {
                 if (result.contents == null) {
                     Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
                 } else {
-                    Toast.makeText(this, "Scanned: " + result.contents, Toast.LENGTH_LONG).show()
+                    url = result.contents
+                    changeActivity()
                 }
             } else {
                 super.onActivityResult(requestCode, resultCode, data)
@@ -65,9 +71,13 @@ class StartActivity : AppCompatActivity() {
         }
     }
 
+    private fun changeActivity(){
+        startActivity(Intent(this@StartActivity, DetailsImobileActivity::class.java))
+    }
+
     private fun animateButtons(){
         Utils.setPushDownAnimation(buttonReadCode)
-        Utils.setPushDownAnimation(linkSign)
-        Utils.setPushDownAnimation(buttonRegister)
+        Utils.setPushDownAnimation(buttonLogin)
+        Utils.setPushDownAnimation(linkAboutUs)
     }
 }
