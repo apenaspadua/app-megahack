@@ -1,8 +1,8 @@
 <p align="center">
 <a href="#" alt="Shawee">
   <img src="https://realestatesolution.netlify.com/static/media/logo.5b0f9f47.png" height="200px"></a></p>
-  <img src="https://realestatesolution.netlify.com/static/media/logo.5b0f9f47.png" height="200px"></a></p>
-  <img src="https://realestatesolution.netlify.com/static/media/logo.5b0f9f47.png" height="200px"></a></p>
+  <img src="https://raw.githubusercontent.com/padua-matheus13/app-megahack/master/app/src/main/res/drawable/image9.jpeg" height="200px"></a></p>
+  <img src="https://raw.githubusercontent.com/padua-matheus13/app-megahack/master/app/src/main/res/drawable/image10.jpeg" height="200px"></a></p>
 
 <br />
 <a href="https://github.com/ricardotecnicob/realestatesolution" alt="SHAWEE">Aplicação FrontEnd</a>
